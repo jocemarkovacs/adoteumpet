@@ -1,4 +1,4 @@
-# Adote
+# Adote um Pet
 ## Projeto desenvolvido na Curso da Semana Mult Stack pela treinaweb.com.br
 
 Projeto com o intuito de aprendizado e desenvolvido nas seguintes linguagens:
