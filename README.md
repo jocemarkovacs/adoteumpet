@@ -6,6 +6,7 @@ Projeto com o intuito de aprendizado e desenvolvido nas seguintes linguagens:
     - Front-End:
       - HTML
       - ReactJS
+      - NextJS
       - TypeScript
       - JavaScript
     - Back-End
