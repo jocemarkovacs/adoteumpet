@@ -20,7 +20,7 @@ class Adocao extends Model
      */
     protected $fillable = ['email', 'valor', 'pet_id'];
     /**
-     * Define a Adocao com o Pet
+     * Define a relação Adocao com o Pet
      *
      * @return BelongsTo
      */

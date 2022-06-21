@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Adocao;
+use App\Http\Resources\AdocaoCollection;
+use App\Rules\AdocaoUnicaPet;
 
 class AdocaoController extends Controller
 {
     public function index()
     {
-       return Adocao::with('pet')->get();
+       $adocoes =  Adocao::with('pet')->get();
+
+       return new AdocaoCollection($adocoes);
     }
 
     /**
@@ -26,7 +30,7 @@ class AdocaoController extends Controller
          * Laravael. Vide na documentação as regras de validação existentes
          */
         $request->validate([
-            "email" => ['required', 'email'],
+            "email" => ['required', 'email', new AdocaoUnicaPet($request->input('pet_id', 0))],
             "valor" => ['required', 'numeric', 'between:10,100'],
             "pet_id" => ['required', 'int', 'exists:pets,id']
         ]);
